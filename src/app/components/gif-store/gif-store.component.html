@@ -1,0 +1,45 @@
+<div class="mt-4">
+    <div class="search-container">
+        <h3 class="text-center mb-4">My GIF Store</h3>
+        <!-- search section -->
+        <div class="mb-4">
+            <div class="ml-10">
+                <input type="text" class="search-input" placeholder="Search GIFs by name" [(ngModel)]="searchName">
+                <button class="search-button ml-1" (click)="searchGifs()">Search</button>
+                <button class="clear-button ml-1" (click)="clearData()">Clear</button>
+            </div>
+        </div>
+        <!-- gif list section -->
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">GIF</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Date Added</th>
+                    <th scope="col" class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody [dragula]="'userGifs'" [(dragulaModel)]="userGifs">
+                <tr *ngFor="let gif of userGifs; let i= index">
+                    <th scope="row">{{i+1}}</th>
+                    <td><img class="img" [src]="gif.url" height="80px" width="80px" alt="GIF"></td>
+                    <td>
+                        <p>{{ gif.name }}</p>
+                    </td>
+                    <td>
+                        <p>{{ gif.dateAdded | date:"dd-MM-yyyy hh:mm:ss" }}</p>
+                    </td>
+                    <td class="text-center">
+                        <a title="download GIF" class="pr-15" (click)="downloadGif(gif)"><i
+                                class="fa-solid fa-lg fa-file-arrow-down"></i></a>
+                        <a title="remove GIF" class="text-danger" (click)="removeGif(i)"><i
+                                class="fa-solid fa-lg fa-trash"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p *ngIf="userGifs.length === 0 && !isResultNotFound" class="text-center">Your GIF store is currently empty.</p>
+        <p *ngIf="isResultNotFound" class="text-center">No results matching your search.</p>
+    </div>
+</div>

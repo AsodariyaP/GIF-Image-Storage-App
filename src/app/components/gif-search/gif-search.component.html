@@ -1,0 +1,16 @@
+<div class="search-container">
+  <input type="text" class="search-input" placeholder="Search GIFs" [(ngModel)]="searchText"
+    (keyup.enter)="searchGifs()">
+  <button class="search-button ml-1" (click)="searchGifs()">Search</button>
+  <div class="gif-results">
+    <div class="card-columns mt-4">
+      <div class="card" *ngFor="let gif of searchResults">
+        <img class="card-img-top" [src]="gif.images.fixed_width.url" alt="GIF">
+        <div class="add-icon">
+          <i title="add to store" class="fa-solid fa-lg fa-circle-plus" (click)="addGifToUserStore(gif)"></i>
+        </div>
+      </div>
+    </div>
+    <p *ngIf="isResultNotFound" class="text-center">No results matching your search.</p>
+  </div>
+</div>
