@@ -10,7 +10,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-### About the App
+## About the App
 This Angular application allows users to store and manage their collection of GIF images conveniently. The app provides a user-friendly interface with two components, enabling users to search for GIFs using the Giphy API and add them to their collection. Users can also search for and sort their saved GIFs by name, date added, or custom sorting through drag and drop. Additionally, they have the option to download the GIFs as files. The app ensures that the state is preserved even if the page is reloaded, as the images are stored locally in the browser's local storage.
 
 ### Components
@@ -26,7 +26,7 @@ The app's user interface and user experience are designed to be intuitive and us
 ### Local Storage
 To store the GIF images locally, the app utilizes the browser's local storage feature. Each GIF image is stored with its name and URL, allowing easy retrieval and display within the User's GIF Collection component.
 
-###Technologies Used
-The app is built using Angular, taking advantage of its robust features for creating dynamic and web applications. To fetch GIFs from the Giphy API, the app leverages HTTP requests. Additionally, the app utilizes various libraries and tools from the Angular ecosystem and other open-source resources available on the internet to enhance its functionality and improve the user experience.
+### Technologies Used
+The app is built using Angular, taking advantage of its robust features for creating dynamic web applications. To fetch GIFs from the Giphy API, the app leverages HTTP requests. Additionally, the app utilizes various libraries and tools from the Angular ecosystem and other open-source resources available on the internet to enhance its functionality and improve the user experience.
 
 Happy coding! 😊 👍
